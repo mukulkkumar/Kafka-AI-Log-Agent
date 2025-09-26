@@ -56,6 +56,7 @@ def create_pr(branch_name):
         "body": "This PR was created automatically after error detection."
     }
     response = requests.post(url, headers=headers, json=data)
+    print("PR response:", response.text)
     print("PR created:", response.json().get("html_url"))
 
 # Poll messages
