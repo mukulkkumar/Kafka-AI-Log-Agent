@@ -66,3 +66,20 @@ Traceback (most recent call last):
   File "/mnt/d/kafka_ai_log_agent/log_env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1417, in execute
     raise exc.ObjectNotExecutableError(statement) from err
 sqlalchemy.exc.ObjectNotExecutableError: Not an executable object: 'SELECT * FROM investments'
+2025-09-26 16:31:14,942 - INFO - Database initialized: mydata.db
+2025-09-26 16:31:14,965 - ERROR - Error querying table investments: Not an executable object: 'SELECT * FROM investments'
+Traceback (most recent call last):
+  File "/mnt/d/kafka_ai_log_agent/log_env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    meth = statement._execute_on_connection
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_execute_on_connection'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/kafka_ai_log_agent/app.py", line 83, in query_all
+    result = conn.execute(f"SELECT * FROM {table_name}")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/kafka_ai_log_agent/log_env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1417, in execute
+    raise exc.ObjectNotExecutableError(statement) from err
+sqlalchemy.exc.ObjectNotExecutableError: Not an executable object: 'SELECT * FROM investments'
