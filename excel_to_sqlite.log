@@ -1,6 +1,5 @@
-2025-09-22 17:50:02,391 - INFO - Database initialized: mydata.db
-2025-09-22 17:50:27,011 - INFO - Database initialized: mydata.db
-2025-09-22 17:50:27,014 - ERROR - Error querying table investments: Not an executable object: 'SELECT * FROM investments'
+2025-09-26 16:17:22,727 - INFO - Database initialized: mydata.db
+2025-09-26 16:17:22,779 - ERROR - Error querying table investments: Not an executable object: 'SELECT * FROM investments'
 Traceback (most recent call last):
   File "/mnt/d/kafka_ai_log_agent/log_env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
     meth = statement._execute_on_connection

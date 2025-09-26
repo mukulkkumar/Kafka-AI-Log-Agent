@@ -28,12 +28,15 @@ consumer = KafkaConsumer(
 print(f"Listening to topic: {topic_name} ...")
 
 def apply_fix(error_message):
-    # TODO: Implement your error-to-fix logic here
-    # For demo, just print the error
     print("Applying fix for:", error_message)
-    # Example: touch a file or edit code
-    # subprocess.run(["python", "fix_script.py", error_message])
-    # Return True if fix applied
+    # Add a comment line to app.py
+    with open("app.py", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    # Insert comment at the top
+    lines.insert(0, "# This is an auto-fix comment added by apply_fix\n")
+    with open("app.py", "w", encoding="utf-8") as f:
+        f.writelines(lines)
+    print("Added auto-fix comment to app.py")
     return True
 
 def create_branch(branch_name):
