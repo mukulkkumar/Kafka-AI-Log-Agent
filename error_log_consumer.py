@@ -65,6 +65,6 @@ for message in consumer:
     print(f"Received: {error_message}")
     # branch_name = BRANCH_PREFIX + str(hash(error_message))
     if apply_fix(error_message):
-        create_branch(BRANCH_NAME)
+        # create_branch(BRANCH_NAME)
         commit_and_push(BRANCH_NAME)
         create_pr(BRANCH_NAME)
