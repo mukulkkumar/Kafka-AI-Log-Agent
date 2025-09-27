@@ -85,3 +85,25 @@ bin/kafka-console-producer.sh --topic test-topic --bootstrap-server localhost:90
 bin/kafka-console-consumer.sh --topic test-topic --bootstrap-server localhost:9092 --from-beginning
 ```
 
+---
+
+## 🛠️ Auto-Fixing Code with AI
+
+This project supports **automatic code fixing** using AI (OpenAI GPT-4) in response to error logs detected by the Kafka consumer. When an error block is received:
+
+- The error message and relevant code are sent to the OpenAI API for analysis and correction.
+- The AI returns the fixed code, which is then automatically written back to the affected file (e.g., `app.py`).
+- No code fences or extra formatting are included—only the corrected code is saved.
+- This enables self-healing code workflows, reducing manual intervention for common errors.
+
+**Requirements:**
+- Set your OpenAI API key in the environment variable `OPENAI_API_KEY`.
+- Install the `openai` Python package (`pip install -r requirements.txt`).
+
+**Example Workflow:**
+1. Error is detected and sent to the consumer via Kafka.
+2. The consumer's `apply_fix` function uses OpenAI to generate a fix.
+3. The code is updated in place, and optionally a pull request can be created for review.
+
+---
+
