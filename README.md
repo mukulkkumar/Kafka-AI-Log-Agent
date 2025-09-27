@@ -98,7 +98,7 @@ This project supports **automatic code fixing** using AI (OpenAI GPT-4) in respo
 
 **Requirements:**
 - Set your OpenAI API key in the environment variable `OPENAI_API_KEY`.
-- Install the `openai` Python package (`pip install -r requirements.txt`).
+- Install Python package (`pip install -r requirements.txt`).
 
 **Example Workflow:**
 1. Error is detected and sent to the consumer via Kafka.
